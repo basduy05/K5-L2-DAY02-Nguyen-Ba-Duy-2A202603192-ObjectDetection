@@ -7,7 +7,7 @@
 - Email: basduygame@gmail.com
 - Lớp: L2A
 - Link repo bài làm: https://github.com/basduy05/K5-L2-DAY02-Nguyen-Ba-Duy-2A202603192-ObjectDetection
-- Link Colab đã chạy: https://colab.research.google.com/drive/1example_link_colab_basduy05 (cập nhật link share Google Colab của bạn tại đây)
+- Link Colab đã chạy: https://colab.research.google.com/drive/1H0VtXG3id-biGFIZqT7x4pxqRQ3zZRlp#scrollTo=3e0508d8
 
 ## 2. Schema và mini guideline
 
