@@ -22,6 +22,6 @@
 
 | Ảnh | Tình huống | Quyết định cuối | Lý do theo schema |
 | --- | --- | --- | --- |
-| `drive_...` | | | |
-| `drive_...` | | | |
-| `drive_...` | | | |
+| `drive_003.jpg` | Ngã tư đông đúc, các xe nối đuôi sát nhau che khuất một phần và có xe bán tải cabin nhỏ. | Gán nhãn car cho xe bán tải; các xe bị che vẽ box riêng ôm phần nhìn thấy được. | Schema quy định xe bán tải cabin nhỏ thuộc lớp car; quy tắc occlusion chỉ gán box phần nhìn thấy, không đoán phần bị che.
+| `drive_004.jpg` | Cảnh ngã tư ban đêm, ánh sáng yếu, có người đi bộ và xe máy di chuyển cắt ngang luồng xe. | Chỉ gán box cho xe con (`car`) và xe van (`van`); tuyệt đối không gán xe máy và người đi bộ. | Schema chỉ gồm 4 lớp ô tô (`car`, `truck`, `bus`, `van`); người đi bộ và phương tiện 2 bánh thuộc phạm vi cấm gán (out-of-scope). |
+| `drive_014.jpg` | Xe cứu hộ giao thông màu trắng (`公安`) gắn cần cẩu kéo xe ở phía sau tiền cảnh. | Gán nhãn `truck` (Class 1). | Xe chuyên dụng chở/cứu hộ phương tiện có kết cấu cabin và khung công tác tách rời, thuộc lớp `truck`, không phải xe `car` hay `van`. |
