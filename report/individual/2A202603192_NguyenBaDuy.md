@@ -16,7 +16,7 @@ Dẫn tới [GUIDELINE_MINI.md](../../GUIDELINE_MINI.md).
 Tóm tắt 3 ca mơ hồ đã quyết định và cách áp dụng schema:
 1. **Ca 1 (`drive_003.jpg`)**: Ngã tư đông đúc, các xe nối đuôi sát nhau che khuất một phần và xuất hiện xe bán tải (pickup truck) có thùng hàng nhỏ phía sau. Quyết định: Gán `car` (Class 0) cho xe bán tải theo schema (không gán `truck`); các xe bị che khuất chỉ vẽ box ôm phần thân nhìn thấy được theo quy tắc Occlusion.
 2. **Ca 2 (`drive_004.jpg`)**: Cảnh ngã tư ban đêm, ánh sáng yếu, có người đi bộ và xe máy di chuyển qua đường. Quyết định: Tuyệt đối không gán người đi bộ và xe máy (thuộc phạm vi cấm gán out-of-scope); chỉ gán box cho các xe thuộc 4 lớp (`car`, `van`).
-3. **Ca 3 (`drive_014.jpg`)**: Xe cứu hộ giao thông màu trắng (`公安`) gắn cần cẩu kéo xe ở phía sau tiền cảnh. Quyết định: Gán nhãn `truck` (Class 1) vì đây là xe chuyên dụng chở/cứu hộ phương tiện có kết cấu cabin và thùng công tác tách rời, không phải `car` hay `van`.
+3. **Ca 3 (`drive_014.jpg`)**: Xe cứu hộ giao thông màu trắng gắn cần cẩu kéo xe ở phía sau tiền cảnh. Quyết định: Gán nhãn `truck` (Class 1) vì đây là xe chuyên dụng chở/cứu hộ phương tiện có kết cấu cabin và thùng công tác tách rời, không phải `car` hay `van`.
 
 ## 3. Annotation và self-QC
 
@@ -33,14 +33,14 @@ Tóm tắt 3 ca mơ hồ đã quyết định và cách áp dụng schema:
   5. `drive_008.jpg` (dòng xe di chuyển dưới gầm cầu vượt)
   6. `drive_009.jpg` (xe buýt lớn ở tiền cảnh che khuất xe tải và xe con)
   7. `drive_012.jpg` (xe dừng đỗ và di chuyển chậm sát vỉa hè)
-  8. `drive_014.jpg` (xe cứu hộ đặc chủng `公安`, xe buýt 2 tầng, xe van đỏ)
+  8. `drive_014.jpg` (xe cứu hộ đặc chủng, xe buýt 2 tầng, xe van đỏ)
   9. `drive_020.jpg` (ảnh góc nghiêng, luồng giao thông rẽ phải)
   10. `drive_028.jpg` (cảnh giao thông hỗn hợp ban ngày)
 - **Lỗi bỏ sót/box/class phát hiện khi rà và cách sửa**:
   - *Lỗi box lỏng / lấn mặt đường*: Ở ảnh `drive_005.jpg` (đường ướt sau mưa), ban đầu viền dưới của box có xu hướng ăn lấn vào bóng phản chiếu của xe trên mặt đường ướt -> Đã thu hẹp cạnh đáy box bám sát mép bánh xe tiếp xúc mặt đường.
   - *Lỗi chồng lấn / gộp vật thể (Occlusion)*: Ở ảnh `drive_003.jpg` (ngã tư ùn tắc), các xe con nối đuôi che khuất một phần đuôi/đầu xe khác -> Đã tách thành các bounding box độc lập, mỗi box chỉ ôm trọn phần thân xe thực sự nhìn thấy được.
   - *Lỗi phạm vi đối tượng (Out of scope)*: Ở ảnh `drive_004.jpg` (cảnh ban đêm), có người đi bộ và người đi xe máy di chuyển ở dải phân cách -> Đã loại bỏ hoàn toàn, không gán nhãn cho người và phương tiện 2 bánh theo đúng schema.
-  - *Lỗi phân loại xe buýt lớn và xe kéo đặc chủng*: Ở ảnh `drive_009.jpg`, xe buýt nội đô chiếm diện tích lớn ở tiền cảnh được gán chính xác `bus` (2), ôm sát viền không đè sang xe tải nhỏ chở hàng màu xanh `truck` (1). Ở ảnh `drive_014.jpg`, xe cứu hộ chuyên dụng có cơ cấu cẩu kéo (`公安`) được phân loại chuẩn xác là `truck` (1).
+  - *Lỗi phân loại xe buýt lớn và xe kéo đặc chủng*: Ở ảnh `drive_009.jpg`, xe buýt nội đô chiếm diện tích lớn ở tiền cảnh được gán chính xác `bus` (2), ôm sát viền không đè sang xe tải nhỏ chở hàng màu xanh `truck` (1). Ở ảnh `drive_014.jpg`, xe cứu hộ chuyên dụng có cơ cấu cẩu kéo được phân loại chuẩn xác là `truck` (1).
 - **Commit khóa nhãn ban đầu**: `a7a4690` (`feat: initial 50 train annotations before gold release`).
 
 ## 4. Gold QC và rework
